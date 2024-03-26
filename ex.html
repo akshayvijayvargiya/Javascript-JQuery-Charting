@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  
+  <meta charset="utf-8" />
+  <title>Chart.js examples</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+</head>
+<body>
+  <h1>Candidate Dashboard</h1>
+  <div style="display: flex; justify-content: space-around;">
+    <div style="flex: 1; padding: 10px;">
+        <div class="chart-container" style="position: relative; height:20vh; width:40vw">
+            <canvas id="barchartexample"></canvas> <!-- Ensure unique ID -->
+            <h3 align="center">Jobs Applied based on Roles</h3>
+        </div>
+    </div>
+    <div style="flex: 1; padding: 10px;">
+        <div class="chart-container" style="position: relative; height:20vh; width:40vw">
+            <canvas id="linechartexample"></canvas> <!-- Ensure unique ID -->
+            <h3 align="center">Profile Views by Recruiter</h3>
+        </div>
+    </div>
+</div>
+
+
+  
+
+
+  <script>
+    new Chart(document.getElementById("barchartexample"), {
+      type: 'bar',
+      data: {
+        labels: ["SDE Roles", "Data Analyst Roles", "Data Scientist Roles", "SWE", "Analyst"],
+        datasets: [
+          {
+            label: "Jobs Applied",
+            backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
+            data: [24, 10, 7, 15, 10]
+          }
+        ]
+      },
+      options: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: 'Jobs Applied'
+        }
+      }
+    });
+
+    new Chart(document.getElementById("linechartexample"), {
+  type: 'line',
+  data: {
+    labels: ["Jan", "Feb", "Mar", "Apr", "May"],
+    datasets: [{ 
+        data: [5, 10, 11, 12, 8],
+        label: "2021",
+        borderColor: "#3e95cd",
+        fill: false
+      }, { 
+        data: [20, 34, 40, 34, 35],
+        label: "2022",
+        borderColor: "#8e5ea2",
+        fill: false
+      }, { 
+        data: [20, 65, 78, 90, 99],
+        label: "2023",
+        borderColor: "#3cba9f",
+        fill: false
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'Profile Views'
+    }
+  }
+});
+  </script>
+</body>
+</html>

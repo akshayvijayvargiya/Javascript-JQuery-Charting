@@ -18,12 +18,10 @@
 </head>
 <body>
   <h1>Bar chart example</h1>
-
   <canvas id="barchartexample" width="300" height="150"></canvas>
-
   <script>
     new Chart(document.getElementById("barchartexample"), {
-      type: 'bar',
+      type: 'doughnut',
       data: {
         labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
         datasets: [
